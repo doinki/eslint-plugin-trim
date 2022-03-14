@@ -1,0 +1,28 @@
+{
+  "author": {
+    "email": "doinki94@gmail.com",
+    "name": "doinki",
+    "url": "https://github.com/doinki"
+  },
+  "bugs": "https://github.com/doinki/eslint-plugin-trim/issues",
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "homepage": "https://github.com/doinki/eslint-plugin-trim#readme",
+  "keywords": [
+    "eslint",
+    "react"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "eslint-plugin-trim",
+  "peerDependencies": {
+    "eslint": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doinki/eslint-plugin-trim.git"
+  },
+  "version": "0.1.0"
+}
