@@ -1,13 +1,14 @@
 # eslint-plugin-trim
 
-## List of supported rules
+## Installation
 
-✔️: Enabled in the recommended configuration.\
-🔧: Fixable with eslint --fix.
+```bash
+# yarn
+yarn add -D eslint-plugin-trim
 
-| ✔️  | 🔧  | Rule                                                                                          | Description       |
-| :-: | :-: | :-------------------------------------------------------------------------------------------- | :---------------- |
-| ✔️  | 🔧  | [class-name](https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/class-name.md) | Enforce className |
+# npm
+npm install -D eslint-plugin-trim
+```
 
 ## Configuration
 
@@ -19,3 +20,12 @@
   }
 }
 ```
+
+## List of supported rules
+
+✔️: Enabled in the recommended configuration.\
+🔧: Fixable with eslint --fix.
+
+| ✔️  | 🔧  | Rule                                                                                          | Description       |
+| :-: | :-: | :-------------------------------------------------------------------------------------------- | :---------------- |
+| ✔️  | 🔧  | [class-name](https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/class-name.md) | Enforce className |
