@@ -28,4 +28,4 @@ npm install -D eslint-plugin-trim
 
 | ✔️  | 🔧  | Rule                                                                                          | Description       |
 | :-: | :-: | :-------------------------------------------------------------------------------------------- | :---------------- |
-| ✔️  | 🔧  | [class-name](https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/class-name.md) | Enforce className |
+|     | 🔧  | [class-name](https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/class-name.md) | Enforce className |
