@@ -3,20 +3,24 @@ import type { Rule } from 'eslint';
 import type { ExtendedExpression } from '../../types';
 import trimLiteral from './trimLiteral';
 
-function trimAllLiterals(context: Rule.RuleContext, data: ExtendedExpression) {
+function trimAllLiterals(
+  context: Rule.RuleContext,
+  data: ExtendedExpression,
+  message: string
+) {
   const { type } = data;
 
   if (type === 'Literal') {
-    trimLiteral(context, data);
+    trimLiteral(context, data, message);
   } else if (type === 'JSXExpressionContainer') {
-    trimAllLiterals(context, data.expression);
+    trimAllLiterals(context, data.expression, message);
   } else if (type === 'ArrayExpression') {
     data.elements.forEach((element) => {
       if (!element || element.type === 'SpreadElement') {
         return;
       }
 
-      trimAllLiterals(context, element);
+      trimAllLiterals(context, element, message);
     });
   } else if (type === 'CallExpression') {
     data.arguments.forEach((arg) => {
@@ -24,18 +28,18 @@ function trimAllLiterals(context: Rule.RuleContext, data: ExtendedExpression) {
         return;
       }
 
-      trimAllLiterals(context, arg);
+      trimAllLiterals(context, arg, message);
     });
   } else if (type === 'ConditionalExpression') {
     const { consequent, alternate } = data;
 
-    trimAllLiterals(context, consequent);
-    trimAllLiterals(context, alternate);
+    trimAllLiterals(context, consequent, message);
+    trimAllLiterals(context, alternate, message);
   } else if (type === 'LogicalExpression') {
     const { left, right } = data;
 
-    trimAllLiterals(context, left);
-    trimAllLiterals(context, right);
+    trimAllLiterals(context, left, message);
+    trimAllLiterals(context, right, message);
   } else if (type === 'ObjectExpression') {
     data.properties.forEach((property) => {
       if (property.type === 'SpreadElement') {
@@ -48,11 +52,11 @@ function trimAllLiterals(context: Rule.RuleContext, data: ExtendedExpression) {
         return;
       }
 
-      trimAllLiterals(context, key);
+      trimAllLiterals(context, key, message);
     });
   } else if (type === 'TemplateLiteral') {
     data.expressions.forEach((expression) => {
-      trimAllLiterals(context, expression);
+      trimAllLiterals(context, expression, message);
     });
   }
 }

@@ -16,6 +16,7 @@ npm install -D eslint-plugin-trim
 {
   "plugins": ["trim"],
   "rules": {
+    "trim/argument": "error",
     "trim/class-name": "error"
   }
 }
@@ -28,4 +29,5 @@ npm install -D eslint-plugin-trim
 
 | ✔️  | 🔧  | Rule                                                                                          | Description       |
 | :-: | :-: | :-------------------------------------------------------------------------------------------- | :---------------- |
+|     | 🔧  | [argument](https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/argument.md)     | Enforce argument  |
 |     | 🔧  | [class-name](https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/class-name.md) | Enforce className |

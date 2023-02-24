@@ -15,7 +15,7 @@ const className: Rule.RuleModule = {
           return;
         }
 
-        trimAllLiterals(context, value);
+        trimAllLiterals(context, value, 'className must be trimmed');
       },
     };
   },

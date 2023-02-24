@@ -1,7 +1,11 @@
 import type { Rule } from 'eslint';
 import type { Literal } from 'estree';
 
-function trimLiteral(context: Rule.RuleContext, data: Literal) {
+function trimLiteral(
+  context: Rule.RuleContext,
+  data: Literal,
+  message: string
+) {
   const { range, value } = data;
 
   if (typeof value !== 'string' || !range) {
@@ -17,7 +21,7 @@ function trimLiteral(context: Rule.RuleContext, data: Literal) {
   context.report({
     fix: (fixer) =>
       fixer.replaceTextRange([range[0] + 1, range[1] - 1], expected),
-    message: 'className must be trimmed',
+    message,
     node: data,
   });
 }
