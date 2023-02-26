@@ -32,7 +32,7 @@ const className: Rule.RuleModule = {
     docs: {
       description: 'Enforce `argument`',
       recommended: true,
-      url: 'https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/class-name.md',
+      url: 'https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/argument.md',
     },
     fixable: 'code',
     type: 'suggestion',
