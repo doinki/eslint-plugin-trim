@@ -15,7 +15,7 @@ import argument from '../src/lib/rules/argument';
 
 const ruleTester = new RuleTester();
 
-ruleTester.run('class-name', argument, {
+ruleTester.run('argument', argument, {
   valid: [
     `classNames("")`,
     `classNames('')`,
