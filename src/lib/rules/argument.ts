@@ -4,9 +4,12 @@ import trimAllLiterals from '../helpers/trimAllLiterals';
 
 const className: Rule.RuleModule = {
   create(context) {
+    const options = context.options.at(0) ?? {};
+
     const { callees } = {
-      callees: ['classNames', 'clsx', 'tw', 'twJoin', 'twMerge'],
-      ...context.options,
+      callees: Array.isArray(options.callees)
+        ? options.callees
+        : ['classNames', 'clsx', 'tw', 'twJoin', 'twMerge'],
     };
 
     return {
