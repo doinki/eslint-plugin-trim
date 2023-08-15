@@ -1,4 +1,4 @@
-import type { BaseNode, Expression } from 'estree';
+import type { BaseNode, Expression, Pattern } from 'estree';
 
 interface JSXEmptyExpression extends BaseNode {
   type: 'JSXEmptyExpression';
@@ -11,5 +11,6 @@ interface JSXExpressionContainer extends BaseNode {
 
 export type ExtendedExpression =
   | Expression
+  | Pattern
   | JSXEmptyExpression
   | JSXExpressionContainer;

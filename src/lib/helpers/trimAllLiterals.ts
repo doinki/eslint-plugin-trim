@@ -6,7 +6,7 @@ import trimLiteral from './trimLiteral';
 function trimAllLiterals(
   context: Rule.RuleContext,
   data: ExtendedExpression,
-  message: string
+  message: string,
 ) {
   const { type } = data;
 
@@ -46,13 +46,14 @@ function trimAllLiterals(
         return;
       }
 
-      const { key } = property;
+      const { key, value } = property;
 
       if (key.type === 'PrivateIdentifier') {
         return;
       }
 
       trimAllLiterals(context, key, message);
+      trimAllLiterals(context, value, message);
     });
   } else if (type === 'TemplateLiteral') {
     data.expressions.forEach((expression) => {
