@@ -4,7 +4,7 @@ import type { Literal } from 'estree';
 function trimLiteral(
   context: Rule.RuleContext,
   data: Literal,
-  message: string
+  message: string,
 ) {
   const { range, value } = data;
 
