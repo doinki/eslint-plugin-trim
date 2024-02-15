@@ -25,6 +25,9 @@
     "type": "git",
     "url": "https://github.com/doinki/eslint-plugin-trim.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "rimraf dist && rollup -c",
     "test": "jest",
