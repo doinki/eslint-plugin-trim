@@ -18,21 +18,6 @@ const ERROR = { message: 'String argument must be trimmed', type: 'Literal' };
 const ruleTester = new RuleTester();
 
 ruleTester.run('argument', argument, {
-  valid: [
-    `classNames("")`,
-    `classNames('')`,
-    `clsx("")`,
-    `clsx('')`,
-    `clsx(...arg, '')`,
-    `tw("")`,
-    `tw('')`,
-    `twJoin("")`,
-    `twJoin('')`,
-    `twMerge("")`,
-    `twMerge('')`,
-    `noop(" ")`,
-    `noop(' ')`,
-  ],
   invalid: [
     {
       code: `clsx(" ")`,
@@ -49,5 +34,20 @@ ruleTester.run('argument', argument, {
       errors: [ERROR],
       output: `clsx(...arg, "")`,
     },
+  ],
+  valid: [
+    `classNames("")`,
+    `classNames('')`,
+    `clsx("")`,
+    `clsx('')`,
+    `clsx(...arg, '')`,
+    `tw("")`,
+    `tw('')`,
+    `twJoin("")`,
+    `twJoin('')`,
+    `twMerge("")`,
+    `twMerge('')`,
+    `noop(" ")`,
+    `noop(' ')`,
   ],
 });

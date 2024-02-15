@@ -1,5 +1,5 @@
-import type { Rule } from 'eslint';
-import type { Literal } from 'estree';
+import { type Rule } from 'eslint';
+import { type Literal } from 'estree';
 
 function trimLiteral(
   context: Rule.RuleContext,

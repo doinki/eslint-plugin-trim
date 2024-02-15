@@ -1,6 +1,6 @@
-import type { Rule } from 'eslint';
+import { type Rule } from 'eslint';
 
-import type { ExtendedExpression } from '../../types';
+import { type ExtendedExpression } from '../../types';
 import trimLiteral from './trimLiteral';
 
 function trimAllLiterals(
@@ -31,7 +31,7 @@ function trimAllLiterals(
       trimAllLiterals(context, arg, message);
     });
   } else if (type === 'ConditionalExpression') {
-    const { consequent, alternate } = data;
+    const { alternate, consequent } = data;
 
     trimAllLiterals(context, consequent, message);
     trimAllLiterals(context, alternate, message);

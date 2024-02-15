@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "lib": ["DOM", "ESNext"],
+    "esModuleInterop": true,
+    "lib": ["ESNext"],
     "module": "CommonJS",
     "moduleResolution": "Node",
-    "isolatedModules": true,
     "noEmit": true,
-    "outDir": "lib",
+    "outDir": "dist",
     "skipLibCheck": true,
     "strict": true,
-    "target": "ES2019"
-  },
-  "include": ["src"]
+    "target": "ES2015"
+  }
 }
