@@ -144,6 +144,16 @@ ruleTester.run('class-name', className, {
       errors: [ERROR, ERROR],
       output: `<div className={\`flex \${isTrue() ? 'items-center' : 'justify-center'}\`}></div>`,
     },
+    {
+      code: `<div class=" "></div>`,
+      errors: [ERROR],
+      output: `<div class=""></div>`,
+    },
+    {
+      code: `<div class=' '></div>`,
+      errors: [ERROR],
+      output: `<div class=''></div>`,
+    },
   ],
   valid: [
     `<div className=""></div>`,
@@ -170,5 +180,12 @@ ruleTester.run('class-name', className, {
     `<div className={clsx({ flex: 'flex', ...classes })}></div>`,
     `<div className={\`flex \${isTrue() ? "items-center" : "justify-center"}\`}></div>`,
     `<div className={\`flex \${isTrue() ? 'items-center' : 'justify-center'}\`}></div>`,
+
+    `<div class=""></div>`,
+    `<div class=''></div>`,
+    `<div class="flex"></div>`,
+    `<div class='flex'></div>`,
+    `<div class="flex items-center"></div>`,
+    `<div class='flex items-center'></div>`,
   ],
 });
