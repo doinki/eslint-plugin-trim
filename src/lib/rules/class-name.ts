@@ -4,6 +4,13 @@ import trimAllLiterals from '../helpers/trimAllLiterals';
 
 const className: Rule.RuleModule = {
   create(context) {
+    const options = context.options.at(0) ?? {};
+    const { attributes } = {
+      attributes: Array.isArray(options.attributes)
+        ? options.attributes
+        : ['class', 'className'],
+    };
+
     return {
       JSXAttribute(node: any) {
         const {
@@ -11,7 +18,7 @@ const className: Rule.RuleModule = {
           value,
         } = node;
 
-        if (name !== 'className' || !value) {
+        if (!attributes.includes(name) || !value) {
           return;
         }
 

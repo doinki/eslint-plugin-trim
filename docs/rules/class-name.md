@@ -51,3 +51,27 @@ Examples of **correct** code for this rule:
   ...
 </div>
 ```
+
+## Rule Options
+
+```js
+"trim/class-name": [<enabled>, { "attributes": Array<string> }]
+```
+
+### `attributes` (default: ["class", "className"])
+
+Examples of **incorrect** code for `{ attributes: ["class", "className"] }` option:
+
+```jsx
+<div className=" ">...</div>
+
+<div class=" ">...</div>
+```
+
+Examples of **correct** code for `{ attributes: ["class", "className"] }` option:
+
+```jsx
+<div className="">...</div>
+
+<div class="">...</div>
+```
