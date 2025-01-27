@@ -48,5 +48,5 @@ export default [trim.configs.flat.recommended];
 
 | ✔️  | 🔧  | Rule                                                                                          | Description       |
 | :-: | :-: | :-------------------------------------------------------------------------------------------- | :---------------- |
-|     | 🔧  | [argument](https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/argument.md)     | Enforce argument  |
-|     | 🔧  | [class-name](https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/class-name.md) | Enforce className |
+| ✅  | 🔧  | [argument](https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/argument.md)     | Enforce argument  |
+| ✅  | 🔧  | [class-name](https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/class-name.md) | Enforce className |
