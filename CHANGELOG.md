@@ -1,5 +1,11 @@
 # eslint-plugin-trim
 
+## 1.0.0
+
+### Major Changes
+
+- 22a6833: Update to support ESLint v9
+
 ## 0.6.0
 
 ### Minor Changes
