@@ -9,7 +9,7 @@ const className: Rule.RuleModule = {
     const { callees } = {
       callees: Array.isArray(options.callees)
         ? options.callees
-        : ['classNames', 'clsx', 'tw', 'twJoin', 'twMerge'],
+        : ['cn', 'twJoin', 'twMerge', 'clsx'],
     };
 
     return {

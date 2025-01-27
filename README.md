@@ -3,23 +3,42 @@
 ## Installation
 
 ```bash
+# npm
+npm install -D eslint-plugin-trim
+
 # yarn
 yarn add -D eslint-plugin-trim
 
-# npm
-npm install -D eslint-plugin-trim
+# pnpm
+pnpm add -D eslint-plugin-trim
 ```
 
-## Configuration
+## Configuration (legacy: `.eslintrc\*`)
 
 ```json
 {
   "plugins": ["trim"],
   "rules": {
-    "trim/argument": "error",
-    "trim/class-name": "error"
+    "trim/argument": "warn",
+    "trim/class-name": "warn"
   }
 }
+```
+
+or
+
+```json
+{
+  "extends": ["plugin:trim/recommended"]
+}
+```
+
+## Configuration (new: `eslint.config.js`)
+
+```js
+import trim from 'eslint-plugin-trim';
+
+export default [trim.configs.flat.recommended];
 ```
 
 ## List of supported rules

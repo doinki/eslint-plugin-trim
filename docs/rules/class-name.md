@@ -60,7 +60,7 @@ Examples of **correct** code for this rule:
 
 ### `attributes` (default: ["class", "className"])
 
-Examples of **incorrect** code for `{ attributes: ["class", "className"] }` option:
+Examples of **incorrect** code for `{ attributes: ["className", "class"] }` option:
 
 ```jsx
 <div className=" ">...</div>
@@ -68,7 +68,7 @@ Examples of **incorrect** code for `{ attributes: ["class", "className"] }` opti
 <div class=" ">...</div>
 ```
 
-Examples of **correct** code for `{ attributes: ["class", "className"] }` option:
+Examples of **correct** code for `{ attributes: ["className", "class"] }` option:
 
 ```jsx
 <div className="">...</div>

@@ -30,32 +30,28 @@ clsx(isTrue() && '');
 
 ### `callees` (default: ["classNames", "clsx", "tw", "twJoin", "twMerge"])
 
-Examples of **incorrect** code for `{ callees: ["classNames", "clsx", "tw", "twJoin", "twMerge"] }` option:
+Examples of **incorrect** code for `{ callees: ["cn", "twJoin", "twMerge", "clsx"] }` option:
 
 ```js
-classNames(' ');
-
-clsx(' ');
-
-tw(' ');
+cn(' ');
 
 twJoin(' ');
 
 twMerge(' ');
+
+clsx(' ');
 ```
 
-Examples of **correct** code for `{ callees: ["classNames", "clsx", "tw", "twJoin", "twMerge"] }` option:
+Examples of **correct** code for `{ callees: ["cn", "twJoin", "twMerge", "clsx"] }` option:
 
 ```js
-classNames('');
-
-clsx('');
-
-tw('');
+cn('');
 
 twJoin('');
 
 twMerge('');
+
+clsx('');
 
 noop(' ');
 ```

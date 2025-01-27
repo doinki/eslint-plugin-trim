@@ -4,18 +4,15 @@ import className from '../src/lib/rules/class-name';
 
 const ERROR = { message: 'className must be trimmed', type: 'Literal' };
 
-(RuleTester as any).setDefaultConfig({
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-      modules: true,
+const ruleTester = new RuleTester({
+  languageOptions: {
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      },
     },
-    ecmaVersion: 2020,
-    sourceType: 'module',
   },
 });
-
-const ruleTester = new RuleTester();
 
 ruleTester.run('class-name', className, {
   invalid: [

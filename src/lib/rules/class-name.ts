@@ -8,7 +8,7 @@ const className: Rule.RuleModule = {
     const { attributes } = {
       attributes: Array.isArray(options.attributes)
         ? options.attributes
-        : ['class', 'className'],
+        : ['className', 'class'],
     };
 
     return {
