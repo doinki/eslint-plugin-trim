@@ -1,5 +1,11 @@
 # eslint-plugin-trim
 
+## 1.0.1
+
+### Patch Changes
+
+- 4b7f77b: fix: Add schema to argument rule
+
 ## 1.0.0
 
 ### Major Changes

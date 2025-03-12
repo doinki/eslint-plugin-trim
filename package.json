@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-trim",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "type": "commonjs",
   "main": "dist/index.js",
