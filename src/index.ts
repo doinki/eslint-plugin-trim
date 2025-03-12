@@ -2,6 +2,10 @@ import packageJson from '../package.json';
 import argument from './lib/rules/argument';
 import className from './lib/rules/class-name';
 
+const meta = {
+  name: packageJson.name,
+  version: packageJson.version,
+};
 const rules = {
   argument,
   'class-name': className,
@@ -20,8 +24,10 @@ const configs = {
 
   flat: {
     recommended: {
+      name: 'trim/flat/recommended',
       plugins: {
         trim: {
+          meta,
           rules,
         },
       },
@@ -31,10 +37,7 @@ const configs = {
 };
 
 const plugin = {
-  meta: {
-    name: packageJson.name,
-    version: packageJson.version,
-  },
+  meta,
   configs,
   rules,
 };

@@ -9,7 +9,7 @@ const className: Rule.RuleModule = {
     const { callees } = {
       callees: Array.isArray(options.callees)
         ? options.callees
-        : ['cn', 'twJoin', 'twMerge', 'clsx'],
+        : ['cn', 'cva', 'twJoin', 'twMerge', 'clsx'],
     };
 
     return {
@@ -38,6 +38,25 @@ const className: Rule.RuleModule = {
       url: 'https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/argument.md',
     },
     fixable: 'code',
+    schema: {
+      type: 'array',
+      minItems: 0,
+      maxItems: 1,
+      items: [
+        {
+          type: 'object',
+          properties: {
+            callees: {
+              type: 'array',
+              items: {
+                type: 'string',
+              },
+            },
+          },
+          additionalProperties: false,
+        },
+      ],
+    },
     type: 'suggestion',
   },
 };

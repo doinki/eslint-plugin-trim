@@ -28,12 +28,14 @@ clsx(isTrue() && '');
 "trim/argument": [<enabled>, { "callees": Array<string> }]
 ```
 
-### `callees` (default: ["classNames", "clsx", "tw", "twJoin", "twMerge"])
+### `callees` (default: ["cn", "cva", "twJoin", "twMerge", "clsx"])
 
-Examples of **incorrect** code for `{ callees: ["cn", "twJoin", "twMerge", "clsx"] }` option:
+Examples of **incorrect** code for `{ callees: ["cn", "cva", "twJoin", "twMerge", "clsx"] }` option:
 
 ```js
 cn(' ');
+
+cva(' ');
 
 twJoin(' ');
 
@@ -42,10 +44,12 @@ twMerge(' ');
 clsx(' ');
 ```
 
-Examples of **correct** code for `{ callees: ["cn", "twJoin", "twMerge", "clsx"] }` option:
+Examples of **correct** code for `{ callees: ["cn", "cva", "twJoin", "twMerge", "clsx"] }` option:
 
 ```js
 cn('');
+
+cva('');
 
 twJoin('');
 
