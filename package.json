@@ -1,21 +1,63 @@
 {
   "name": "eslint-plugin-trim",
   "version": "1.0.1",
+  "keywords": [
+    "eslint",
+    "react",
+    "trim"
+  ],
+  "homepage": "https://github.com/doinki/eslint-plugin-trim#readme",
+  "bugs": "https://github.com/doinki/eslint-plugin-trim/issues",
   "license": "MIT",
-  "type": "commonjs",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "author": {
+    "name": "doinki",
+    "email": "doinki94@gmail.com",
+    "url": "https://github.com/doinki"
+  },
+  "repository": {
+    "url": "git+https://github.com/doinki/eslint-plugin-trim.git"
+  },
   "files": [
     "dist"
   ],
-  "packageManager": "pnpm@9.15.4",
+  "type": "commonjs",
   "sideEffects": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup",
     "test": "tsx test/argument.test.ts && tsx test/class-name.test.ts",
     "release": "pnpm run build && publint && changeset publish",
+    "fmt": "oxfmt",
     "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.31.1",
+    "@types/eslint": "^9.6.1",
+    "@types/estree": "^1.0.9",
+    "eslint": "^10.8.1",
+    "oxfmt": "^0.63.0",
+    "prettier": "^3.9.6",
+    "publint": "^0.3.23",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.12",
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "@typescript-eslint/parser": ">=3",
@@ -26,33 +68,15 @@
       "optional": true
     }
   },
-  "devDependencies": {
-    "@changesets/cli": "^2.27.12",
-    "@types/eslint": "^9.6.1",
-    "@types/estree": "^1.0.6",
-    "eslint": "^9.19.0",
-    "prettier": "^3.4.2",
-    "publint": "^0.3.2",
-    "tsup": "^8.3.6",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24.19.0",
+      "onFail": "download"
+    }
   },
-  "author": {
-    "email": "doinki94@gmail.com",
-    "name": "doinki",
-    "url": "https://github.com/doinki"
+  "engines": {
+    "node": ">=14"
   },
-  "bugs": "https://github.com/doinki/eslint-plugin-trim/issues",
-  "homepage": "https://github.com/doinki/eslint-plugin-trim#readme",
-  "keywords": [
-    "eslint",
-    "trim",
-    "react"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "url": "git+https://github.com/doinki/eslint-plugin-trim.git"
-  }
+  "packageManager": "pnpm@11.21.0"
 }

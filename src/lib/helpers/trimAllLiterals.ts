@@ -3,11 +3,7 @@ import { type Rule } from 'eslint';
 import { type ExtendedExpression } from '../../types';
 import trimLiteral from './trimLiteral';
 
-function trimAllLiterals(
-  context: Rule.RuleContext,
-  data: ExtendedExpression,
-  message: string,
-) {
+function trimAllLiterals(context: Rule.RuleContext, data: ExtendedExpression, message: string) {
   const { type } = data;
 
   if (type === 'Literal') {
@@ -47,10 +43,6 @@ function trimAllLiterals(
       }
 
       const { key, value } = property;
-
-      if (key.type === 'PrivateIdentifier') {
-        return;
-      }
 
       trimAllLiterals(context, key, message);
       trimAllLiterals(context, value, message);

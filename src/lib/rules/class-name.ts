@@ -6,9 +6,7 @@ const className: Rule.RuleModule = {
   create(context) {
     const options = context.options.at(0) ?? {};
     const { attributes } = {
-      attributes: Array.isArray(options.attributes)
-        ? options.attributes
-        : ['className', 'class'],
+      attributes: Array.isArray(options.attributes) ? options.attributes : ['className', 'class'],
     };
 
     return {
@@ -28,11 +26,30 @@ const className: Rule.RuleModule = {
   },
   meta: {
     docs: {
-      description: 'Enforce `className`',
+      description: 'Disallow leading/trailing whitespace and consecutive spaces in JSX class name attributes',
       recommended: true,
       url: 'https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/class-name.md',
     },
     fixable: 'code',
+    schema: {
+      type: 'array',
+      minItems: 0,
+      maxItems: 1,
+      items: [
+        {
+          type: 'object',
+          properties: {
+            attributes: {
+              type: 'array',
+              items: {
+                type: 'string',
+              },
+            },
+          },
+          additionalProperties: false,
+        },
+      ],
+    },
     type: 'suggestion',
   },
 };
