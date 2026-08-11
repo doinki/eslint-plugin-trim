@@ -1,5 +1,11 @@
 # eslint-plugin-trim
 
+## 1.0.2
+
+### Patch Changes
+
+- 66c34b7: Add schema to class-name rule
+
 ## 1.0.1
 
 ### Patch Changes
