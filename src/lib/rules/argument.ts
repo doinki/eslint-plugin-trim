@@ -7,17 +7,12 @@ const className: Rule.RuleModule = {
     const options = context.options.at(0) ?? {};
 
     const { callees } = {
-      callees: Array.isArray(options.callees)
-        ? options.callees
-        : ['cn', 'cva', 'twJoin', 'twMerge', 'clsx'],
+      callees: Array.isArray(options.callees) ? options.callees : ['cn', 'cva', 'twJoin', 'twMerge', 'clsx'],
     };
 
     return {
       CallExpression(node) {
-        if (
-          node.callee.type !== 'Identifier' ||
-          !callees.includes(node.callee.name)
-        ) {
+        if (node.callee.type !== 'Identifier' || !callees.includes(node.callee.name)) {
           return;
         }
 
@@ -33,7 +28,8 @@ const className: Rule.RuleModule = {
   },
   meta: {
     docs: {
-      description: 'Enforce `argument`',
+      description:
+        'Disallow leading/trailing whitespace and consecutive spaces in string arguments passed to class name utility functions',
       recommended: true,
       url: 'https://github.com/doinki/eslint-plugin-trim/blob/main/docs/rules/argument.md',
     },

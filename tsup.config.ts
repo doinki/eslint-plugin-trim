@@ -9,6 +9,6 @@ export default defineConfig({
     config.sourcemap = true;
   },
   format: ['cjs', 'esm'],
-  target: ['node10'],
+  target: ['node14.21'],
   treeshake: true,
 });

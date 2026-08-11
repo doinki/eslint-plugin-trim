@@ -1,7 +1,10 @@
 {
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.format.oxc": "always",
+    "source.fixAll.oxc": "always"
   },
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "eslint.enable": false,
+  "prettier.enable": false
 }

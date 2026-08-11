@@ -9,8 +9,4 @@ interface JSXExpressionContainer extends BaseNode {
   type: 'JSXExpressionContainer';
 }
 
-export type ExtendedExpression =
-  | Expression
-  | Pattern
-  | JSXEmptyExpression
-  | JSXExpressionContainer;
+export type ExtendedExpression = Expression | Pattern | JSXEmptyExpression | JSXExpressionContainer;

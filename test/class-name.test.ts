@@ -2,7 +2,7 @@ import { RuleTester } from 'eslint';
 
 import className from '../src/lib/rules/class-name';
 
-const ERROR = { message: 'className must be trimmed', type: 'Literal' };
+const ERROR = { message: 'className must be trimmed' };
 
 const ruleTester = new RuleTester({
   languageOptions: {
@@ -151,8 +151,18 @@ ruleTester.run('class-name', className, {
       errors: [ERROR],
       output: `<div class=''></div>`,
     },
+    {
+      code: `<div tw=" flex "></div>`,
+      errors: [ERROR],
+      options: [{ attributes: ['tw'] }],
+      output: `<div tw="flex"></div>`,
+    },
   ],
   valid: [
+    {
+      code: `<div className=" "></div>`,
+      options: [{ attributes: ['tw'] }],
+    },
     `<div className=""></div>`,
     `<div className=''></div>`,
     `<div className="flex"></div>`,

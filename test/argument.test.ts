@@ -2,7 +2,7 @@ import { RuleTester } from 'eslint';
 
 import argument from '../src/lib/rules/argument';
 
-const ERROR = { message: 'String argument must be trimmed', type: 'Literal' };
+const ERROR = { message: 'String argument must be trimmed' };
 
 const ruleTester = new RuleTester();
 
@@ -23,8 +23,18 @@ ruleTester.run('argument', argument, {
       errors: [ERROR],
       output: `clsx(...arg, "")`,
     },
+    {
+      code: `classNames(" ")`,
+      errors: [ERROR],
+      options: [{ callees: ['classNames'] }],
+      output: `classNames("")`,
+    },
   ],
   valid: [
+    {
+      code: `clsx(" ")`,
+      options: [{ callees: ['classNames'] }],
+    },
     `classNames("")`,
     `classNames('')`,
     `clsx("")`,
