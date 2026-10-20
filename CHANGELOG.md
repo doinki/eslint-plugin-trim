@@ -1,5 +1,12 @@
 # eslint-plugin-trim
 
+## 1.0.3
+
+### Patch Changes
+
+- 3b8523f: - Remove devEngines from package.json
+  - Mark eslint as an optional peer dependency
+
 ## 1.0.2
 
 ### Patch Changes
