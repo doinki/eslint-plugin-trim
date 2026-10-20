@@ -51,12 +51,11 @@
     "@changesets/cli": "^2.31.1",
     "@types/eslint": "^9.6.1",
     "@types/estree": "^1.0.9",
-    "eslint": "^10.8.1",
-    "oxfmt": "^0.63.0",
-    "prettier": "^3.9.6",
-    "publint": "^0.3.23",
-    "tsup": "^8.5.1",
-    "tsx": "^4.23.12",
+    "eslint": "^10.13.0",
+    "oxfmt": "^0.74.0",
+    "publint": "^0.3.25",
+    "tsup": "^9.0.0",
+    "tsx": "^4.23.15",
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
@@ -66,17 +65,13 @@
   "peerDependenciesMeta": {
     "@typescript-eslint/parser": {
       "optional": true
-    }
-  },
-  "devEngines": {
-    "runtime": {
-      "name": "node",
-      "version": "^24.19.0",
-      "onFail": "download"
+    },
+    "eslint": {
+      "optional": true
     }
   },
   "engines": {
     "node": ">=14"
   },
-  "packageManager": "pnpm@11.21.0"
+  "packageManager": "pnpm@12.14.0"
 }

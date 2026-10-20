@@ -18,9 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: pnpm/setup@v2
+      - uses: pnpm/setup@v3
         with:
           cache: true
+          node-version-file: .nvmrc
 
       - name: Create Release Pull Request or Publish to npm
         uses: changesets/action@v1
